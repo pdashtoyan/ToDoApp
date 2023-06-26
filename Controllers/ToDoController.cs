@@ -153,7 +153,7 @@ namespace ToDo.Controllers
 
 
         [HttpGet("Get/ByDone")]
-        public ActionResult GetByDone()
+        public ActionResult GetListByDone()
         {
             if (ToDoItems.Any())
             {
@@ -171,35 +171,7 @@ namespace ToDo.Controllers
                 return Ok(ToDoItems.ToList());
             }
 
-            return Ok(new List<Todo>());
-
-
-
-
-
-
-
-            //if (value.Date < DateTime.Today)
-            //{
-            //    value.IsDone = true;
-            //}
-            //else
-            //{
-            //    value.IsDone = false;
-            //}
-            //if (isDone == null)
-            //{
-            //    return Ok(ToDoItems);
-            //}
-            //IEnumerable<Todo> Done = ToDoItems.Where(item => item.IsDone == isDone);
-
-
-            //if (Done.Any())
-            //{
-            //    return Ok(Done);
-            //}
-            //return BadRequest(new List<Todo>());
-
+            return BadRequest(new List<Todo>());
 
         }
     }
